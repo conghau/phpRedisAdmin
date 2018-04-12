@@ -26,13 +26,13 @@ header('Cache-Control: private');
 <title><?php echo format_html($server['host'])?> - phpRedisAdmin</title>
 
 <?php foreach ($page['css'] as $css) { ?>
-<link rel=stylesheet href="css/<?php echo $css; ?>.css?v<?=$version?>" media=all>
+<link rel=stylesheet href="<?php echo BASE_URL ?>/css/<?php echo $css; ?>.css?v<?=$version?>" media=all>
 <?php } ?>
 
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="<?php echo BASE_URL ?>/images/favicon.png">
 
 <?php foreach ($page['js'] as $js) { ?>
-<script src="js/<?php echo $js; ?>.js?v<?=$version?>"></script>
+<script src="<?php echo BASE_URL ?>/js/<?php echo $js; ?>.js?v<?=$version?>"></script>
 <?php } ?>
 
 </head>

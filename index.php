@@ -109,7 +109,7 @@ if($redis) {
         ?>
         <li class="folder<?php echo ($fullkey === '') ? '' : ' collapsed'?><?php echo $islast ? ' last' : ''?>">
         <div class="icon"><?php echo format_html($name)?>&nbsp;<span class="info">(<?php echo count($item)?>)</span>
-        <?php if ($fullkey !== '') { ?><a href="delete.php?s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>&amp;tree=<?php echo urlencode($fullkey)?>:" class="deltree"><img src="images/delete.png" width="10" height="10" title="Delete tree" alt="[X]"></a><?php } ?>
+        <?php if ($fullkey !== '') { ?><a href="delete.php/?s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>&amp;tree=<?php echo urlencode($fullkey)?>:" class="deltree"><img src="images/delete.png" width="10" height="10" title="Delete tree" alt="[X]"></a><?php } ?>
         </div><ul>
         <?php
 
@@ -139,7 +139,7 @@ if($redis) {
 // This is basically the same as the click code in index.js.
 // Just build the url for the frame based on our own url.
 if (count($_GET) == 0) {
-  $iframe = 'overview.php';
+  $iframe = BASE_URL.'/overview.php/';
 } else {
   $iframe = substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'], '?') + 1);
 
@@ -190,18 +190,18 @@ if ($databases > 1) { ?>
 
 <p>
 <?php if (isset($login)) { ?>
-<a href="logout.php"><img src="images/logout.png" width="16" height="16" title="Logout" alt="[L]"></a>
+<a href="<?php echo BASE_URL ?>/logout.php/"><img src="<?php echo BASE_URL ?>/images/logout.png" width="16" height="16" title="Logout" alt="[L]"></a>
 <?php } ?>
-<a href="?info&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="images/info.png" width="16" height="16" title="Info" alt="[I]"></a>
-<a href="?export&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="images/export.png" width="16" height="16" title="Export" alt="[E]"></a>
-<a href="?import&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="images/import.png" width="16" height="16" title="Import" alt="[I]"></a>
+<a href="<?php echo BASE_URL ?>?info&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="<?php echo BASE_URL ?>/images/info.png" width="16" height="16" title="Info" alt="[I]"></a>
+<a href="<?php echo BASE_URL ?>?export&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="<?php echo BASE_URL ?>/images/export.png" width="16" height="16" title="Export" alt="[E]"></a>
+<a href="<?php echo BASE_URL ?>?import&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>"><img src="<?php echo BASE_URL ?>/images/import.png" width="16" height="16" title="Import" alt="[I]"></a>
 <?php if (isset($server['flush']) && $server['flush']) { ?>
-<a href="?flush&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>" id="flush"><img src="images/flush.png" width="16" height="16" title="Flush" alt="[F]"></a>
+<a href="<?php echo BASE_URL ?>?flush&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>" id="flush"><img src="<?php echo BASE_URL ?>/images/flush.png" width="16" height="16" title="Flush" alt="[F]"></a>
 <?php } ?>
 </p>
 
 <p>
-<a href="?edit&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>" class="add">Add another key</a>
+<a href="<?php echo BASE_URL ?>?edit&amp;s=<?php echo $server['id']?>&amp;d=<?php echo $server['db']?>" class="add">Add another key</a>
 </p>
 
 <p>

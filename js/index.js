@@ -24,14 +24,14 @@ $(function() {
   
       if ((e.currentTarget.href.indexOf('?') == -1) ||
           (e.currentTarget.href.indexOf('?') == (e.currentTarget.href.length - 1))) {
-        href = 'overview.php';
+        href = 'overview.php/';
       } else {
         href = e.currentTarget.href.substr(e.currentTarget.href.indexOf('?') + 1);
   
         if (href.indexOf('&') != -1) {
-          href = href.replace('&', '.php?');
+          href = href.replace('&', '.php/?');
         } else {
-          href += '.php';
+          href += '.php/';
         }
       }
   

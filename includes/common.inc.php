@@ -2,6 +2,7 @@
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
 define('PHPREDIS_ADMIN_PATH', dirname(__DIR__));
+define('BASE_URL', 'http://vn.telesales.local/redis');
 
 // Undo magic quotes (both in keys and values)
 if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
